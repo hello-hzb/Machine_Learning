@@ -44,6 +44,7 @@ class KNeighborClassifier(object):
     def predict(self, feature, k):
         """feature shape is (n_instance, n_feature)"""
         closestpoints = np.zeros((k, len(feature)+2), dtype=type(feature))
+        closestpoints[:, -1] = float('inf')
         self.kd_tree.findKNode(self.kd_tree.root, closestpoints, feature, k)
         # np.bincount 返回一个数组，每个元素代表该id出现的次数，如生成一个7元素数组，其中索引3位置的元素表示3出现的次数
         # np.argmax 获得数组元素中最大值的索引，所以和np.bincount结合起来用就能够获得出现次数最大的类别了
@@ -65,11 +66,11 @@ class KdNode(object):
 class KdTree(object):
     """kd树的创建，data为list"""
     def __init__(self, datas, labels):
-        k = len(data[0])                  # 特征维度
-        dataset = np.column_stack(datas, labels)
+        k = datas.shape[1]                  # 特征维度
+        dataset = np.column_stack((datas, labels))
 
         def CreateNode(split, data_set):  # 按样本第split维特征进行数据集划分创建KdNode
-            if not data_set:              # 数据集为空时，一种情况最开始的时候训练数据集为空，另外一种情况就是kd树创建完成返回
+            if data_set.size == 0:              # 数据集为空时，一种情况最开始的时候训练数据集为空，另外一种情况就是kd树创建完成返回
                 return None
             data_set = data_set[data_set[:, split].argsort()]
             # data_set.sort(key=lambda x: x[split])   # 按照split轴的数据进行排序
@@ -99,20 +100,20 @@ class KdTree(object):
         if kdNode == None:
             return
         # 计算欧氏距离
-        curDis = (sum((kdNode.value[0:-2] - x[0:-2])**2))**0.5
+        curDis = (sum((kdNode.node_data[0:-2] - x[0:-2])**2))**0.5
         if minDis < 0 or curDis < minDis:
             minDis = curDis
-            closestPoint = kdNode.value
+            closestPoint = kdNode.node_data
         # 递归查找叶节点
-        if kdNode.value[kdNode.dimension] >= x[kdNode.dimension]:
+        if kdNode.node_data[kdNode.split_axis] >= x[kdNode.split_axis]:
             self.findClosest(kdNode.left, closestPoint, x, minDis)
         else:
             self.findClosest(kdNode.right, closestPoint, x, minDis)
         # 计算测试点和分隔超平面的距离，如果相交进入另一个叶节点重复
-        rang = abs(x[kdNode.dimension] - kdNode.value[kdNode.dimension])
+        rang = abs(x[kdNode.split_axis] - kdNode.node_data[kdNode.split_axis])
         if rang > minDis:
             return
-        if kdNode.value[kdNode.dimension] >= x[kdNode.dimension]:
+        if kdNode.node_data[kdNode.split_axis] >= x[kdNode.split_axis]:
             self.findClosest(kdNode.right, closestPoint, x, minDis)   # 往另外一侧的节点搜索，和上面递归的方向是相反的
         else:
             self.findClosest(kdNode.left, closestPoint, x, minDis)
@@ -128,24 +129,24 @@ class KdTree(object):
         if kdNode == None:
             return
         # 计算欧式距离
-        curDis = (sum((kdNode.value[0:-2] - x) ** 2)) ** 0.5
+        curDis = (sum((kdNode.node_data[0:-2] - x) ** 2)) ** 0.5
         # 将closestPoints按照minDis列排序,这里存在一个问题，排序后返回一个新对象
         closestPoints = closestPoints[closestPoints[:, -1].argsort()]
         # 每次取最后一行元素操作, 即和当前最大的距离作比较，确定是否更新最近的k个点，每更新一次会做一次排序
-        if closestPoints[-1][-1] >= 10000 or closestPoints[-1][-1] > curDis:
+        if closestPoints[-1][-1] > curDis:
             closestPoints[-1][-1] = curDis
-            closestPoints[-1, 0:-2] = kdNode.value
+            closestPoints[-1, 0:-1] = kdNode.node_data
 
             # 递归搜索叶结点
-        if kdNode.value[kdNode.dimension] >= x[kdNode.dimension]:
+        if kdNode.node_data[kdNode.split_axis] >= x[kdNode.split_axis]:
             self.findKNode(kdNode.left, closestPoints, x, k)
         else:
             self.findKNode(kdNode.right, closestPoints, x, k)
         # 计算测试点和分隔超平面的距离，如果相交进入另一个叶节点重复
-        rang = abs(x[kdNode.dimension] - kdNode.value[kdNode.dimension])
+        rang = abs(x[kdNode.split_axis] - kdNode.node_data[kdNode.split_axis])
         if rang > closestPoints[k - 1][-1]:
             return
-        if kdNode.value[kdNode.dimension] >= x[kdNode.dimension]:
+        if kdNode.node_data[kdNode.split_axis] >= x[kdNode.split_axis]:
             self.findKNode(kdNode.right, closestPoints, x, k)
         else:
             self.findKNode(kdNode.left, closestPoints, x, k)
