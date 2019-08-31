@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="780b2ecd-c63f-4129-9644-7c825e9fec04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_work/x4_treePlotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_work/x2_nearest_neighbors.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_work/x2_nearest_neighbors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_work/x4_decision_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_work/x4_decision_tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_work/x4_decision_tree_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_work/x4_decision_tree_test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,20 +31,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_work/x2_nearest_neighbors.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-81">
-              <caret line="120" column="45" selection-start-line="120" selection-start-column="32" selection-end-line="120" selection-end-column="45" />
+            <state relative-caret-position="200">
+              <caret line="58" column="57" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my_work/x2_nearest_neighbors_test.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/my_work/x4_decision_tree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="103">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="e#343#361#0" expanded="true" />
+                <element signature="e#455#6311#0" />
+                <element signature="e#875#2814#0" />
+                <element signature="e#6862#7358#0" />
+                <element signature="e#7386#7778#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,8 +59,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/lib/python2.7/dist-packages/numpy/core/fromnumeric.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-864">
-              <caret line="2083" column="4" selection-start-line="2083" selection-start-column="4" selection-end-line="2083" selection-end-column="4" />
+            <state relative-caret-position="498">
+              <caret line="1879" column="19" selection-start-line="1879" selection-start-column="19" selection-end-line="1879" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1247972723/math.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="248" column="4" selection-start-line="248" selection-start-column="4" selection-end-line="248" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_work/x4_treePlotter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python2.7/dist-packages/sklearn/tree/tree.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="337" column="35" selection-start-line="337" selection-start-column="35" selection-end-line="337" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -76,6 +113,11 @@
       <find>__prior_probability_cal</find>
       <find>datas</find>
       <find>dimension</find>
+      <find>treePlotter</find>
+      <find>出现</find>
+      <find>__split_dataset</find>
+      <find>np.w</find>
+      <find>feature_select</find>
     </findStrings>
     <replaceStrings>
       <replace>split_axis</replace>
@@ -84,6 +126,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/my_work/x4_decision_tree.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -91,14 +136,15 @@
         <option value="$PROJECT_DIR$/my_work/x3.py" />
         <option value="$PROJECT_DIR$/my_work/x1_perceptron_test.py" />
         <option value="$PROJECT_DIR$/scikit/plot_classification.py" />
-        <option value="$PROJECT_DIR$/my_work/x4_decision_tree_test.py" />
-        <option value="$PROJECT_DIR$/my_work/x4_decision_tree.py" />
-        <option value="$PROJECT_DIR$/scikit/plot_classifier_comparison.py" />
         <option value="$PROJECT_DIR$/my_work/x3_naive_bays_test.py" />
         <option value="$PROJECT_DIR$/my_work/x3_naive_bayes.py" />
         <option value="$PROJECT_DIR$/my_work/x1_perceptron.py" />
         <option value="$PROJECT_DIR$/my_work/x2_nearest_neighbors_test.py" />
         <option value="$PROJECT_DIR$/my_work/x2_nearest_neighbors.py" />
+        <option value="$PROJECT_DIR$/scikit/plot_classifier_comparison.py" />
+        <option value="$PROJECT_DIR$/my_work/x4_decision_tree_test.py" />
+        <option value="$PROJECT_DIR$/my_work/x4_treePlotter.py" />
+        <option value="$PROJECT_DIR$/my_work/x4_decision_tree.py" />
       </list>
     </option>
   </component>
@@ -114,6 +160,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -126,16 +173,10 @@
               <item name="ml_study" type="462c0819:PsiDirectoryNode" />
               <item name="my_work" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ml_study" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ml_study" type="462c0819:PsiDirectoryNode" />
-              <item name="scikit" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -144,7 +185,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -158,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.x2_nearest_neighbors_test">
+  <component name="RunManager" selected="Python.x4_decision_tree">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="ml_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -181,7 +222,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="plot_classifier_comparison" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="plot_face_recognition" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ml_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -194,9 +235,9 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scikit/plot_classifier_comparison.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scikit/plot_face_recognition.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -229,6 +270,9 @@
       <module name="ml_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/my_work" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -244,7 +288,26 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="x3_naive_bayes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="x4_decision_tree" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ml_study" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/my_work" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_work/x4_decision_tree.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="x4_decision_tree_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ml_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -257,26 +320,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_work/x3_naive_bayes.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="x3_naive_bays_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ml_study" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/my_work" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_work/x3_naive_bays_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_work/x4_decision_tree_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -287,11 +331,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.x4_decision_tree" />
+        <item itemvalue="Python.x4_decision_tree_test" />
+        <item itemvalue="Python.plot_face_recognition" />
         <item itemvalue="Python.x2_nearest_neighbors_test" />
         <item itemvalue="Python.x2_nearest_neighbors" />
-        <item itemvalue="Python.x3_naive_bays_test" />
-        <item itemvalue="Python.x3_naive_bayes" />
-        <item itemvalue="Python.plot_classifier_comparison" />
       </list>
     </recent_temporary>
   </component>
@@ -322,12 +366,25 @@
       <workItem from="1565274104854" duration="3226000" />
       <workItem from="1565438763294" duration="15306000" />
       <workItem from="1565507540819" duration="12164000" />
-      <workItem from="1565521494480" duration="3200000" />
+      <workItem from="1565521494480" duration="3448000" />
+      <workItem from="1565531708901" duration="402000" />
+      <workItem from="1566022931010" duration="3503000" />
+      <workItem from="1566135032640" duration="8799000" />
+      <workItem from="1566738371816" duration="34000" />
+      <workItem from="1567255784613" duration="9851000" />
     </task>
+    <task id="LOCAL-00001" summary="add knn test">
+      <created>1565525390564</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1565525390564</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76706000" />
+    <option name="totallyTimeSpent" value="99543000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -339,35 +396,38 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="-4" width="1879" height="1084" extended-state="6" />
-    <editor active="true" />
+    <frame x="41" y="-4" width="1325" height="772" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1603928" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17826428" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3294979" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32919255" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.24425887" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3002092" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.29503107" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32972136" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3294979" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3294979" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32972136" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.29288703" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3294979" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.21273293" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" sideWeight="0.4843096" weight="0.38406983" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.47663552" weight="0.38389367" />
       <window_info anchor="right" id="Database" order="4" sideWeight="0.49407116" weight="0.32951444" />
-      <window_info anchor="right" x="0" y="0" width="281" height="572" id="Documentation" order="5" sideWeight="0.5156904" side_tool="true" weight="0.6099291" />
+      <window_info anchor="right" x="0" y="0" width="281" height="572" id="Documentation" order="5" sideWeight="0.5233645" side_tool="true" weight="0.38389367" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add knn test" />
+    <option name="LAST_COMMIT_MESSAGE" value="add knn test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -424,8 +484,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/my_work/x2_nearest_neighbors.py</url>
-          <line>52</line>
+          <line>58</line>
           <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///usr/local/lib/python2.7/dist-packages/sklearn/datasets/lfw.py</url>
+          <line>301</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///usr/local/lib/python2.7/dist-packages/sklearn/datasets/lfw.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/my_work/x4_decision_tree_test.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/my_work/x4_decision_tree.py</url>
+          <line>170</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -434,21 +514,17 @@
     <SUITE FILE_PATH="coverage/ml_study$x2_nearest_neighbors.coverage" NAME="x2_nearest_neighbors Coverage Results" MODIFIED="1565522498236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_work" />
     <SUITE FILE_PATH="coverage/ml_study$x2_nearest_neighbors_test.coverage" NAME="x2_nearest_neighbors_test Coverage Results" MODIFIED="1565523999815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_work" />
     <SUITE FILE_PATH="coverage/ml_study$x2.coverage" NAME="x2 Coverage Results" MODIFIED="1564153326673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_work" />
+    <SUITE FILE_PATH="coverage/ml_study$x4_decision_tree.coverage" NAME="x4_decision_tree Coverage Results" MODIFIED="1567266697619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_work" />
     <SUITE FILE_PATH="coverage/ml_study$x1_perceptron.coverage" NAME="x1_perceptron Coverage Results" MODIFIED="1564153146158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_work" />
     <SUITE FILE_PATH="coverage/ml_study$plot_classifier_comparison.coverage" NAME="plot_classifier_comparison Coverage Results" MODIFIED="1565516603368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scikit" />
     <SUITE FILE_PATH="coverage/ml_study$x3_naive_bays_test.coverage" NAME="x3_naive_bays_test Coverage Results" MODIFIED="1565521689971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_work" />
+    <SUITE FILE_PATH="coverage/ml_study$plot_face_recognition.coverage" NAME="plot_face_recognition Coverage Results" MODIFIED="1566023402038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scikit" />
     <SUITE FILE_PATH="coverage/ml_study$x1_perceptron_test.coverage" NAME="x1_perceptron_test Coverage Results" MODIFIED="1564411583255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_work" />
     <SUITE FILE_PATH="coverage/ml_study$plot_classification.coverage" NAME="plot_classification Coverage Results" MODIFIED="1565189515531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scikit" />
+    <SUITE FILE_PATH="coverage/ml_study$x4_decision_tree_test.coverage" NAME="x4_decision_tree_test Coverage Results" MODIFIED="1566135496274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_work" />
     <SUITE FILE_PATH="coverage/ml_study$x3_naive_bayes.coverage" NAME="x3_naive_bayes Coverage Results" MODIFIED="1565520608476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_work" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/sklearn/gaussian_process/gpc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2959">
-          <caret line="438" column="45" selection-start-line="438" selection-start-column="32" selection-end-line="438" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/sklearn/datasets/samples_generator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6245">
@@ -594,13 +670,6 @@
     <entry file="file://$PROJECT_DIR$/my_work/x2.py" />
     <entry file="file://$PROJECT_DIR$/../.PyCharm2019.1/system/python_stubs/-1247972723/numpy/core/_multiarray_umath.py" />
     <entry file="file://$PROJECT_DIR$/../.PyCharm2019.1/system/python_stubs/-1247972723/numpy/random/mtrand.py" />
-    <entry file="file://$PROJECT_DIR$/my_work/x4_decision_tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/dist-packages/matplotlib/axes/_subplots.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -615,27 +684,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_work/x4_decision_tree_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/sklearn/neighbors/classification.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="114" column="62" lean-forward="true" selection-start-line="114" selection-start-column="62" selection-end-line="114" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scikit/plot_classifier_comparison.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="53" column="24" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="24" />
-          <folding>
-            <element signature="e#966#984#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -683,24 +735,136 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/numpy/core/fromnumeric.py">
+    <entry file="file:///usr/lib/python2.7/posixpath.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-864">
-          <caret line="2083" column="4" selection-start-line="2083" selection-start-column="4" selection-end-line="2083" selection-end-column="4" />
+        <state relative-caret-position="534">
+          <caret line="272" selection-start-line="272" selection-end-line="272" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/sklearn/datasets/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/sklearn/datasets/lfw.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="228" column="30" selection-start-line="228" selection-start-column="21" selection-end-line="228" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my_work/x2_nearest_neighbors_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
+        <state relative-caret-position="1300">
           <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1247972723/_functools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/numpy/core/shape_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scikit/plot_face_recognition.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scikit/plot_classifier_comparison.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="53" column="3" selection-start-line="53" selection-start-column="3" selection-end-line="56" selection-end-column="46" />
+          <folding>
+            <element signature="e#966#984#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_work/x4_decision_tree_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="71" column="19" lean-forward="true" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+          <folding>
+            <element signature="e#1020#1038#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1247972723/sklearn/tree/_tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="367" column="8" selection-start-line="367" selection-start-column="8" selection-end-line="367" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/sklearn/tree/tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="337" column="35" selection-start-line="337" selection-start-column="35" selection-end-line="337" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_work/x4_treePlotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1247972723/math.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="248" column="4" selection-start-line="248" selection-start-column="4" selection-end-line="248" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="1879" column="19" selection-start-line="1879" selection-start-column="19" selection-end-line="1879" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my_work/x2_nearest_neighbors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
-          <caret line="120" column="45" selection-start-line="120" selection-start-column="32" selection-end-line="120" selection-end-column="45" />
+        <state relative-caret-position="200">
+          <caret line="58" column="57" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/pickle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-720" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_work/classifierStorage.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_work/x4_decision_tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#343#361#0" expanded="true" />
+            <element signature="e#455#6311#0" />
+            <element signature="e#875#2814#0" />
+            <element signature="e#6862#7358#0" />
+            <element signature="e#7386#7778#0" />
+          </folding>
         </state>
       </provider>
     </entry>

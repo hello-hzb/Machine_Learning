@@ -42,7 +42,13 @@ class KNeighborClassifier(object):
         self.kd_tree = KdTree(dataset, labels)
 
     def predict(self, feature, k):
-        """feature shape is (n_instance, n_feature)"""
+        """
+        feature shape is (n_instance, n_feature)
+
+        :param feature:
+        :param k:
+        :return:
+        """
         closestpoints = np.zeros((k, len(feature)+2), dtype=type(feature))
         closestpoints[:, -1] = float('inf')
         self.kd_tree.findKNode(self.kd_tree.root, closestpoints, feature, k)
@@ -90,14 +96,16 @@ class KdTree(object):
         # https://segmentfault.com/a/1190000016293317
     def findClosest(self, kdNode, closestPoint, x, minDis):
         """
-        这里存在一个问题，当传递普通的不可变对象minDis时，递归退回第一次找到
+         这里存在一个问题，当传递普通的不可变对象minDis时，递归退回第一次找到
         最端距离前，minDis改变，最后结果混乱，这里传递一个可变对象进来。
-        kdNode:是构造好的kd树。
-        closestPoint：是存储最近点的可变对象，这里是array
-        x：是要预测的实例
-        minDis：是当前最近距离。
+
+        :param kdNode: 构造好的kd树
+        :param closestPoint: 存储最近点的可变对象，这里是array
+        :param x: 要预测的实例
+        :param minDis: 当前最近距离
+        :return:
         """
-        if kdNode == None:
+        if kdNode is None:
             return
         # 计算欧氏距离
         curDis = (sum((kdNode.node_data[0:-2] - x[0:-2])**2))**0.5
@@ -120,13 +128,14 @@ class KdTree(object):
 
     def findKNode(self, kdNode, closestPoints, x, k):
         """
-        k近邻搜索，kdNode是要搜索的kd树
-        closestPoints:是要搜索的k近邻点集合,将minDis放入closestPoints最后一列合并
-        x：预测实例
-        minDis：是最近距离
-        k:是选择k个近邻
+        k近邻搜索，kdNode是要搜索的kd树,minDis是最近距离
+        :param kdNode:  要搜索的kd树
+        :param closestPoints: 要搜索的k近邻点集合,将minDis放入closestPoints最后一列合并
+        :param x: 预测实例
+        :param k: 选择k个近邻
+        :return:
         """
-        if kdNode == None:
+        if kdNode is None:
             return
         # 计算欧式距离
         curDis = (sum((kdNode.node_data[0:-2] - x) ** 2)) ** 0.5
