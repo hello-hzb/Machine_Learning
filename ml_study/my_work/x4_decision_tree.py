@@ -1,30 +1,46 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 """
-https://blog.csdn.net/leaf_zizi/article/details/83105836
-https://www.cnblogs.com/sumuncle/p/5760458.html  矩阵操作
-获得矩阵的维度，形状，元素个数
-
-print('number of dim:',array.ndim)
-print('shape:', array.shape)
-print('size:', array.size)
-
-https://www.cnblogs.com/xn5991/p/9526267.html
-按照条件返回ndarray中的数据，返回一个子矩阵
-
+# ######################################################################################
+# 文件名称：x4_decision_tree.py
+# 摘   要：
+# 作   者：hello-hzb
+# 日   期：9/1/19
+# 备   注：
+# 算法知识点：
+# 1.特征选择依据：信息增益（ID3）或者信息增益比（C4.5），值越大，说明数据分布越离散，就应该选择该特征优先分类
+# 2.剪枝：预剪枝和后剪枝，预剪枝在创建树的时候就开始了，后剪枝在树创建之后进行，一般使用后剪枝
+# 3.经验熵和信息熵的区别：
+# python知识点：
+# 1.numpy矩阵操作
+# https://blog.csdn.net/leaf_zizi/article/details/83105836
+# https://www.cnblogs.com/sumuncle/p/5760458.html  矩阵操作
+# 获得矩阵的维度，形状，元素个数
+#
+# print('number of dim:',array.ndim)
+# print('shape:', array.shape)
+# print('size:', array.size)
+#
+# https://www.cnblogs.com/xn5991/p/9526267.html
+# 按照条件返回ndarray中的数据，返回一个子矩阵
+# 2.
+# ######################################################################################
 """
+
 import numpy as np
 from math import log
 import operator
+import copy
+import re
 import x4_treePlotter
 
 
 class DecisionTree(object):
     """
-    决策树
+    C4.5决策树，该决策树以信息增益比作为特征选择的依据和标准，基本流程和ID3一致，主要区别是ID3以信息增益为特征选择的依据
     """
     def __init__(self,
                  dataset,              # n * feature_size
+                 eta=0.1,
                  labels=None,          # n
                  criterion="gini",
                  splitter="best",
@@ -32,6 +48,7 @@ class DecisionTree(object):
                  ):
         # self.dataset = np.column_stack((datas, labels))
         self.dataset = dataset
+        self.eta = eta
         self.tree = None
 
     def __information_gain_ratio(self, dataset):
@@ -45,7 +62,7 @@ class DecisionTree(object):
             tmp = (dataset[:, -1] == cls_set[j]).sum()
             prob = float(tmp) / sample_num
             entropy_tmp -= prob * log(prob)
-        empirical_entropy = entropy_tmp     # 经验熵
+        empirical_entropy = entropy_tmp        # 经验熵
 
         # 计算条件经验熵
         info_gain_ratio_list = []
@@ -94,9 +111,10 @@ class DecisionTree(object):
         描述：选择最好的数据集划分维度
         """
         info_gain_ratio_list = self.__information_gain_ratio(dataset)
-        return np.argmax(np.array(info_gain_ratio_list))
+        max_ratio_id = np.argmax(np.array(info_gain_ratio_list))
+        return max_ratio_id[0], info_gain_ratio_list[max_ratio_id[0]]
 
-    def __majorityCnt(self, cls_list):
+    def majorityCnt(self, cls_list):
         """
         输入：分类类别列表
         输出：子节点的分类
@@ -108,8 +126,8 @@ class DecisionTree(object):
             if vote not in cls_cnt.keys():
                 cls_cnt[vote] = 0
             cls_cnt[vote] += 1
-        sortedClassCount = sorted(cls_cnt.iteritems(), key=operator.itemgetter(1), reversed=True)
-        return sortedClassCount[0][0]
+        sortedClassCount = sorted(cls_cnt.items(), key=operator.itemgetter(1), reverse=True)
+        return sortedClassCount[0][0]   # 返回出现次数最多的类别
 
     def __fit(self, dataset, labels):
         """
@@ -117,15 +135,19 @@ class DecisionTree(object):
         输出：决策树
         描述：递归构建决策树，利用上述的函数
         """
+
         # cls_list = [example[-1] for example in dataset]
         cls_list = list(dataset[:, -1])
+        # 类别完全相同，停止划分
         if cls_list.count(cls_list[0]) == len(cls_list):
-            # 类别完全相同，停止划分
             return cls_list[0]
+        # 遍历完所有特征时返回出现次数最多的
         if len(dataset[0]) == 1:
-            # 遍历完所有特征时返回出现次数最多的
-            return self.__majorityCnt(cls_list)
-        best_feat_id = self.__feature_select(dataset)
+            return self.majorityCnt(cls_list)
+        best_feat_id, best_feat_ratio = self.__feature_select(dataset)
+        # 如果最大的信息增益比小于阈值，则不在划分，选择该分支中出现次数最多的类别为该节点的分类类别
+        if best_feat_ratio < self.eta:
+            return self.majorityCnt(cls_list)
         best_feat_label = labels[best_feat_id]     # 信息增益比最大的特征
         mytree = {best_feat_label: {}}
         del(labels[best_feat_id])
@@ -170,21 +192,103 @@ class DecisionTree(object):
 
         predict_res = []
         for testVec in test_dataset:
-            predict_res.append(self.__classify(feat_labels, testVec))
+            predict_res.append(self.__classify(self.tree, feat_labels, testVec))
         return predict_res
 
-    def tree_pruning(self):
+    # 这个用于预剪枝
+    def testing(self, myTree, data_test, labels):
         """
-        决策树剪枝
+        该函数尚未认真评审
+        :param myTree:
+        :param data_test:
+        :param labels:
         :return:
         """
-        pass
+        error = 0.0
+        for i in range(len(data_test)):
+            if self.__classify(myTree, labels, data_test[i]) != data_test[i][-1]:
+                error += 1
+        # print 'myTree %d' %error
+        return float(error)
+
+    # 这个函数用于预剪枝和后剪枝
+    def testingMajor(self, major, data_test):
+        """
+        该函数尚未认真评审
+        :param major:
+        :param data_test:
+        :return:
+        """
+        error = 0.0
+        for i in range(len(data_test)):
+            if major != data_test[i][-1]:
+                error += 1
+        # print 'major %d' % error
+        return float(error)
+
+    def splitDataSet_c(self, dataSet, axis, value, LorR='L'):
+        retDataSet = []
+        featVec = []
+        if LorR == 'L':
+            for featVec in dataSet:
+                if float(featVec[axis]) < value:
+                    retDataSet.append(featVec)
+        else:
+            for featVec in dataSet:
+                if float(featVec[axis]) > value:
+                    retDataSet.append(featVec)
+
+        return retDataSet
+
+    def postPruningTree(self, inputTree, dataSet, data_test, labels, labelProperties):
+        """
+        type: (dict, list, list, list, list) -> dict
+        inputTree: 已构造的树
+        dataSet: 训练集
+        data_test: 验证集
+        labels: 属性标签
+        labelProperties: 属性类别
+        """
+        firstStr = inputTree.keys()[0]
+        secondDict = inputTree[firstStr]
+        classList = [example[-1] for example in dataSet]
+        featkey = copy.deepcopy(firstStr)
+        if '<' in firstStr:  # 对连续的特征值，使用正则表达式获得特征标签和value
+            featkey = re.compile("(.+<)").search(firstStr).group()[:-1]
+            featvalue = float(re.compile("(<.+)").search(firstStr).group()[1:])
+        labelIndex = labels.index(featkey)
+        temp_labels = copy.deepcopy(labels)
+        temp_labelProperties = copy.deepcopy(labelProperties)
+        if labelProperties[labelIndex] == 0:  # 离散特征
+            del (labels[labelIndex])
+            del (labelProperties[labelIndex])
+        for key in secondDict.keys():  # 对每个分支
+            if type(secondDict[key]).__name__ == 'dict':  # 如果不是叶子节点
+                if temp_labelProperties[labelIndex] == 0:  # 离散的
+                    subDataSet = self.__split_dataset(dataSet, labelIndex, key)
+                    subDataTest = self.__split_dataset(data_test, labelIndex, key)
+                else:  # 连续数据的子数据集划分
+                    if key == 'yes':
+                        subDataSet = self.splitDataSet_c(dataSet, labelIndex, featvalue, 'L')
+                        subDataTest = self.splitDataSet_c(data_test, labelIndex, featvalue, 'L')
+                    else:
+                        subDataSet = self.splitDataSet_c(dataSet, labelIndex, featvalue, 'R')
+                        subDataTest = self.splitDataSet_c(data_test, labelIndex, featvalue, 'R')
+                inputTree[firstStr][key] = self.postPruningTree(secondDict[key],
+                                                                subDataSet, subDataTest,
+                                                                copy.deepcopy(labels),
+                                                                copy.deepcopy(
+                                                                labelProperties))
+        # 若剪枝后的推理精度大于剪枝前，返回剪枝后的决策树，这里需要思考一下<=是否正确
+        if self.testing(inputTree, data_test, temp_labels) <= self.testingMajor(self.majorityCnt(classList), data_test):
+            return inputTree
+        return self.majorityCnt(classList)
 
     def store_tree(self, filename):
         """
-        输入：决策树，保存文件路径
-        输出：
-        描述：保存决策树到文件
+        保存决策树到文件中
+        :param filename: 保存的文件名
+        :return:
         """
         import pickle
         fw = open(filename, 'wb')
@@ -193,9 +297,9 @@ class DecisionTree(object):
 
     def grab_tree(self, filename):
         """
-        输入：文件路径名
-        输出：决策树
-        描述：从文件读取决策树
+        加载保存的决策树
+        :param filename: 决策树保存位置
+        :return:
         """
         import pickle
         fr = open(filename, 'rb')
@@ -206,9 +310,13 @@ class CART(DecisionTree):
     """
 
     """
-    def __init__(self):
-        pass
+    def __init__(self, dataset):
+        DecisionTree.__init__(dataset)
 
+
+    def gini_index(self):
+        """基尼指数的计算"""
+        pass
 
 
 def createDataSet():

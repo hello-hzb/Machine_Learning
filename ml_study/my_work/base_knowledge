@@ -1,0 +1,14 @@
+1.python文件头中常常包含：#!/usr/bin/python或者#!/usr/bin/python3，其作用如下所述：
+    分成两种情况：
+    （1）如果调用python脚本时，使用:
+             python script.py
+             #!/usr/bin/python 被忽略，等同于注释
+    （2）如果调用python脚本时，使用:
+              ./script.py
+              #!/usr/bin/python指定解释器的路径
+
+2.pycharm中设置固定文件头的方式
+    setting->editor->live template->python->+->添加文件头->edit variable
+
+3.pycharm中设置文件编码格式
+    setting->editor->file encodings
